@@ -66,7 +66,18 @@ const catstagramPost = [{
     numberOfLikes: 64,
 }];
 
+function renderCatstagramPost(postData) {
+    return `
+        <div data-postid="${postData.id}">
+           <img src="${postData.image}" alt="${postData.caption}" />
+           <p>Cat ID: ${postData.id}</span>
+           <p>number of likes: ${postData.numberOfLikes}</p>
 
+        </div>
+    `;
+}
+var htmlString = catstagramPost.map(renderCatstagramPost).join("");
+document.body.innerHTML += htmlString;
 /************
  * Creating HTML from data - Using renderAdvert from task 2, map the list of articles to HTML
  ************/
@@ -94,3 +105,15 @@ const advert = [{
     description: "Metus at tortor pulvinar varius. Morbi mattis ullamcorpers."
 }];
 
+function renderAdvert(data) {
+    return `
+        <article data-advertid="${data.id}"
+            <h2>${data.title}</h2>
+            <div>${data.price}</div>
+            <p>${data.description}</p>
+        </article>
+    `;
+}
+
+var htmlString = advert.map(renderAdvert).join("");
+document.body.innerHTML += htmlString;
