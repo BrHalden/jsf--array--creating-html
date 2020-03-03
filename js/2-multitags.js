@@ -49,11 +49,15 @@ const catstagramPost = {
 function renderCatstagramPost(postData) {
     return `
         <div data-postid="${postData.id}">
-           <!-- ***** ADD EXTRA HTML HERE **** -->
+           <img src="${postData.image}" alt="${postData.caption}" />
+           <p>Cat ID: ${postData.id}</span>
+           <p>number of likes: ${postData.numberOfLikes}</p>
+
         </div>
     `;
 }
-
+var htmlString = renderCatstagramPost(catstagramPost);
+document.body.innerHTML += htmlString;
 
 /************
  * Creating HTML from data - Create a function called renderAdvert that takes in an object and returns the data as HTML.
@@ -74,4 +78,21 @@ const advert = {
     price: 30000,
     description: "Nullam sagittis. Praesent venenatis metus at tortor pulvinar varius. Morbi mattis ullamcorper velit. Praesent turpis."
 };
+
+function renderAdvert(data) {
+    return `
+        <article data-advertid="${data.id}"
+            <h2>${data.title}</h2>
+            <div>${data.price}</div>
+            <p>${data.description}</p>
+        </article>
+    `;
+}
+var htmlString = renderAdvert(advert);
+document.body.innerHTML += htmlString;
+
+
+
+
+
 
